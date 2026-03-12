@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frontend Decoded — คู่มือ Frontend ฉบับครบจบ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Frontend<span>Decoded</span></a>
+  <ul class="nav-links">
+    <li><a href="#css">CSS</a></li>
+    <li><a href="#design">Design</a></li>
+    <li><a href="#js">JavaScript</a></li>
+    <li><a href="#perf">Performance</a></li>
+    <li><a href="#about">เกี่ยวกับ</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-bg-text">FE</div>
+  <div class="hero-label">// คู่มือ Frontend ฉบับครบจบ</div>
+  <h1 class="hero-title">เรียน Frontend<br><em>แบบเห็นภาพ</em><br>ทำได้จริง</h1>
+  <p class="hero-desc">CSS · Design Principles · JavaScript · Web Performance รวมในที่เดียว พร้อม interactive demo และ code ตัวอย่างที่ copy ได้เลย</p>
+  <div class="hero-pills">
+    <a href="#css" class="pill css">01 — CSS</a>
+    <a href="#design" class="pill design">02 — Design</a>
+    <a href="#js" class="pill js">03 — JavaScript</a>
+    <a href="#perf" class="pill perf">04 — Performance</a>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker" aria-hidden="true">
+    <span class="ticker-item">CSS Flexbox<span class="tsep"></span></span>
+    <span class="ticker-item">Box Model<span class="tsep"></span></span>
+    <span class="ticker-item">Design Principles<span class="tsep"></span></span>
+    <span class="ticker-item">JavaScript ES6+<span class="tsep"></span></span>
+    <span class="ticker-item">Async / Await<span class="tsep"></span></span>
+    <span class="ticker-item">DOM Events<span class="tsep"></span></span>
+    <span class="ticker-item">Fetch API<span class="tsep"></span></span>
+    <span class="ticker-item">Web Vitals<span class="tsep"></span></span>
+    <span class="ticker-item">Lazy Loading<span class="tsep"></span></span>
+    <span class="ticker-item">CSS Grid<span class="tsep"></span></span>
+    <span class="ticker-item">CSS Flexbox<span class="tsep"></span></span>
+    <span class="ticker-item">Box Model<span class="tsep"></span></span>
+    <span class="ticker-item">Design Principles<span class="tsep"></span></span>
+    <span class="ticker-item">JavaScript ES6+<span class="tsep"></span></span>
+    <span class="ticker-item">Async / Await<span class="tsep"></span></span>
+    <span class="ticker-item">DOM Events<span class="tsep"></span></span>
+    <span class="ticker-item">Fetch API<span class="tsep"></span></span>
+    <span class="ticker-item">Web Vitals<span class="tsep"></span></span>
+    <span class="ticker-item">Lazy Loading<span class="tsep"></span></span>
+    <span class="ticker-item">CSS Grid<span class="tsep"></span></span>
+  </div>
+</div>
+
+<!-- ══════════ 01 CSS ══════════ -->
+<section id="css">
+  <div class="sec-header reveal">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title c">HTML & <em>CSS</em></h2>
+  </div>
+
+  <div class="topic-grid reveal">
+    <button class="tcard c" onclick="document.getElementById('bm-demo').scrollIntoView({behavior:'smooth'})">
+      <span class="tcard-tag">Fundamentals</span>
+      <h3 class="tcard-title">Box Model ทำงานยังไง?</h3>
+      <p class="tcard-desc">ทำไม padding กับ margin ถึงต่างกัน และ box-sizing: border-box แก้อะไร</p>
+      <div class="tcard-foot"><span class="tcard-level">Beginner</span><span class="tcard-arrow">→</span></div>
+    </button>
+    <button class="tcard c" onclick="document.getElementById('flex-demo').scrollIntoView({behavior:'smooth'})">
+      <span class="tcard-tag">Layout</span>
+      <h3 class="tcard-title">Flexbox Playground</h3>
+      <p class="tcard-desc">ปรับ properties แล้วดูผลทันที พร้อม code output แบบ live</p>
+      <div class="tcard-foot"><span class="tcard-level">Beginner — Intermediate</span><span class="tcard-arrow">→</span></div>
+    </button>
+    <button class="tcard c">
+      <span class="tcard-tag">Layout</span>
+      <h3 class="tcard-title">CSS Grid ทำ layout ซับซ้อน</h3>
+      <p class="tcard-desc">เมื่อ Flexbox ไม่พอ Grid คือคำตอบ — grid-template-areas แบบเห็นภาพ</p>
+      <div class="tcard-foot"><span class="tcard-level">Intermediate</span><span class="tcard-arrow">→</span></div>
+    </button>
+  </div>
+
+  <!-- BOX MODEL -->
+  <div class="demo-block reveal" id="bm-demo">
+    <div class="demo-head">
+      <span class="demo-badge db-css">Visual Demo</span>
+      <span class="demo-head-title">Box Model — มองเห็นทุก layer</span>
+    </div>
+    <div class="split">
+      <div class="split-left">
+        <div class="bm-visual">
+          <div class="bm-m"><span class="bm-lbl">margin</span>
+            <div class="bm-b"><span class="bm-lbl">border</span>
+              <div class="bm-p"><span class="bm-lbl">padding</span>
+                <div class="bm-c">content</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--surface2);border-left:3px solid var(--js);font-size:12px;"><span style="font-family:'IBM Plex Mono',monospace;min-width:72px;color:var(--js);">content</span><span style="color:var(--muted);">พื้นที่ของ text/image จริงๆ</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--surface2);border-left:3px solid var(--perf);font-size:12px;"><span style="font-family:'IBM Plex Mono',monospace;min-width:72px;color:var(--perf);">padding</span><span style="color:var(--muted);">ระยะห่างใน — ยังอยู่ใน background</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--surface2);border-left:3px solid var(--design);font-size:12px;"><span style="font-family:'IBM Plex Mono',monospace;min-width:72px;color:var(--design);">border</span><span style="color:var(--muted);">เส้นขอบ — ถ้ากำหนด</span></div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--surface2);border-left:3px solid var(--css);font-size:12px;"><span style="font-family:'IBM Plex Mono',monospace;min-width:72px;color:var(--css);">margin</span><span style="color:var(--muted);">ระยะห่างนอก — โปร่งใสเสมอ</span></div>
+        </div>
+      </div>
+      <div class="split-right">
+        <div class="code-topbar">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-filename">box-model.css</span>
+          <button class="copy-btn" onclick="copyCode(this, 'bm-code')">copy</button>
+        </div>
+        <pre id="bm-code"><span class="cm">/* ค่าเริ่มต้น — width ไม่รวม padding/border */</span>
+<span class="sel">.box</span> {
+  <span class="prop">width</span>: <span class="val">200px</span>;
+  <span class="prop">padding</span>: <span class="val">20px</span>;
+  <span class="prop">border</span>: <span class="val">2px solid #333</span>;
+  <span class="cm">/* จริงๆ กว้าง 244px! */</span>
+}
+
+<span class="cm">/* ✓ ใช้ border-box เสมอ */</span>
+<span class="sel">*</span> {
+  <span class="prop">box-sizing</span>: <span class="val">border-box</span>;
+}
+
+<span class="sel">.box</span> {
+  <span class="prop">width</span>: <span class="val">200px</span>;   <span class="cm">/* กว้าง 200px เลย */</span>
+  <span class="prop">padding</span>: <span class="val">20px</span>;
+  <span class="prop">border</span>: <span class="val">2px solid #333</span>;
+}
+
+<span class="cm">/* margin — ระยะห่างภายนอก */</span>
+<span class="sel">.card</span> {
+  <span class="prop">margin</span>: <span class="val">16px auto</span>;   <span class="cm">/* บนล่าง ซ้ายขวา */</span>
+  <span class="prop">margin-top</span>: <span class="val">24px</span>;
+}</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLEXBOX PLAYGROUND -->
+  <div class="demo-block reveal mt48" id="flex-demo">
+    <div class="demo-head">
+      <span class="demo-badge db-css">Interactive Playground</span>
+      <span class="demo-head-title">Flexbox — ลองปรับได้เลย</span>
+    </div>
+    <div class="split">
+      <div class="split-left">
+        <div class="flex-controls">
+          <div class="ctrl-group">
+            <span class="ctrl-label">justify-content</span>
+            <select id="sel-j" onchange="updateFlex()">
+              <option>flex-start</option><option>flex-end</option><option>center</option>
+              <option>space-between</option><option>space-around</option><option>space-evenly</option>
+            </select>
+          </div>
+          <div class="ctrl-group">
+            <span class="ctrl-label">align-items</span>
+            <select id="sel-a" onchange="updateFlex()">
+              <option>stretch</option><option>flex-start</option><option>flex-end</option>
+              <option>center</option><option>baseline</option>
+            </select>
+          </div>
+          <div class="ctrl-group">
+            <span class="ctrl-label">flex-direction</span>
+            <select id="sel-d" onchange="updateFlex()">
+              <option>row</option><option>row-reverse</option>
+              <option>column</option><option>column-reverse</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex-stage" id="flex-stage">
+          <div class="fi">A</div><div class="fi">B</div><div class="fi">C</div>
+        </div>
+        <div class="code-live" id="flex-live">
+          <span class="prop">display</span>: <span class="val">flex</span>;<br>
+          <span class="prop">justify-content</span>: <span class="val" id="lj">flex-start</span>;<br>
+          <span class="prop">align-items</span>: <span class="val" id="la">stretch</span>;<br>
+          <span class="prop">flex-direction</span>: <span class="val" id="ld">row</span>;
+        </div>
+      </div>
+      <div class="split-right">
+        <div class="code-topbar">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-filename">flexbox.css</span>
+          <button class="copy-btn" onclick="copyCode(this, 'flex-code')">copy</button>
+        </div>
+        <pre id="flex-code"><span class="cm">/* Container */</span>
+<span class="sel">.container</span> {
+  <span class="prop">display</span>: <span class="val">flex</span>;
+
+  <span class="cm">/* แนวนอน (main axis) */</span>
+  <span class="prop">justify-content</span>: <span class="val">space-between</span>;
+
+  <span class="cm">/* แนวตั้ง (cross axis) */</span>
+  <span class="prop">align-items</span>: <span class="val">center</span>;
+
+  <span class="prop">flex-direction</span>: <span class="val">row</span>;
+  <span class="prop">flex-wrap</span>: <span class="val">wrap</span>;
+  <span class="prop">gap</span>: <span class="val">16px</span>;
+}
+
+<span class="cm">/* Items */</span>
+<span class="sel">.item</span> {
+  <span class="prop">flex</span>: <span class="val">1</span>;         <span class="cm">/* grow equally */</span>
+  <span class="prop">flex-shrink</span>: <span class="val">0</span>;  <span class="cm">/* ไม่หด */</span>
+  <span class="prop">flex-basis</span>: <span class="val">200px</span>;
+  <span class="prop">align-self</span>: <span class="val">flex-end</span>; <span class="cm">/* override */</span>
+}</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- CSS GRID CODE -->
+  <div class="demo-block reveal mt48">
+    <div class="demo-head">
+      <span class="demo-badge db-css">Code Example</span>
+      <span class="demo-head-title">CSS Grid — ทำ layout ซับซ้อน</span>
+    </div>
+    <div class="split">
+      <div class="split-left">
+        <div style="display:grid;grid-template-areas:'header header''sidebar main''footer footer';grid-template-columns:140px 1fr;grid-template-rows:44px 120px 36px;gap:4px;">
+          <div style="grid-area:header;background:rgba(232,197,71,0.1);border:1px solid rgba(232,197,71,0.2);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--css);">header</div>
+          <div style="grid-area:sidebar;background:rgba(126,184,160,0.08);border:1px solid rgba(126,184,160,0.2);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--design);">sidebar</div>
+          <div style="grid-area:main;background:rgba(139,159,232,0.08);border:1px solid rgba(139,159,232,0.2);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--js);">main</div>
+          <div style="grid-area:footer;background:rgba(224,123,90,0.08);border:1px solid rgba(224,123,90,0.2);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--perf);">footer</div>
+        </div>
+        <p style="margin-top:16px;font-size:12px;color:var(--muted);line-height:1.7;">ใช้ <code style="color:var(--css);">grid-template-areas</code> ระบุ layout ด้วยชื่อ zone — ง่ายกว่า column/row ปกติมาก</p>
+      </div>
+      <div class="split-right">
+        <div class="code-topbar">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-filename">grid-layout.css</span>
+          <button class="copy-btn" onclick="copyCode(this, 'grid-code')">copy</button>
+        </div>
+        <pre id="grid-code"><span class="sel">.layout</span> {
+  <span class="prop">display</span>: <span class="val">grid</span>;
+  <span class="prop">grid-template-areas</span>:
+    <span class="str">'header  header'</span>
+    <span class="str">'sidebar main  '</span>
+    <span class="str">'footer  footer'</span>;
+  <span class="prop">grid-template-columns</span>: <span class="val">200px 1fr</span>;
+  <span class="prop">grid-template-rows</span>: <span class="val">60px 1fr 48px</span>;
+  <span class="prop">gap</span>: <span class="val">16px</span>;
+  <span class="prop">min-height</span>: <span class="val">100vh</span>;
+}
+
+<span class="sel">.header</span>  { <span class="prop">grid-area</span>: <span class="val">header</span>; }
+<span class="sel">.sidebar</span> { <span class="prop">grid-area</span>: <span class="val">sidebar</span>; }
+<span class="sel">.main</span>    { <span class="prop">grid-area</span>: <span class="val">main</span>; }
+<span class="sel">.footer</span>  { <span class="prop">grid-area</span>: <span class="val">footer</span>; }
+
+<span class="cm">/* Responsive — stack ที่หน้าจอเล็ก */</span>
+<span class="sel">@media (max-width: 768px)</span> {
+  <span class="sel">.layout</span> {
+    <span class="prop">grid-template-areas</span>:
+      <span class="str">'header'</span>
+      <span class="str">'main'</span>
+      <span class="str">'sidebar'</span>
+      <span class="str">'footer'</span>;
+    <span class="prop">grid-template-columns</span>: <span class="val">1fr</span>;
+  }
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 02 DESIGN ══════════ -->
+<section id="design">
+  <div class="sec-header reveal">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title d">UI & <em>Design</em> Principles</h2>
+  </div>
+
+  <div class="tabs-layout reveal">
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="showTab('contrast',this)">
+        <span class="tab-btn-title">Contrast</span><span class="tab-btn-num">01</span>
+      </button>
+      <button class="tab-btn" onclick="showTab('hierarchy',this)">
+        <span class="tab-btn-title">Hierarchy</span><span class="tab-btn-num">02</span>
+      </button>
+      <button class="tab-btn" onclick="showTab('whitespace',this)">
+        <span class="tab-btn-title">Whitespace</span><span class="tab-btn-num">03</span>
+      </button>
+    </div>
+    <div class="tabs-content">
+
+      <div class="tab-panel active" id="tab-contrast">
+        <h3>Contrast</h3>
+        <p class="pdesc">WCAG กำหนด ratio ขั้นต่ำ 4.5:1 สำหรับ normal text เพื่อให้ทุกคนอ่านได้ รวมถึงผู้มีปัญหาด้านสายตา</p>
+        <div class="contrast-demo">
+          <div class="cdemo cdemo-bad"><span class="cbadge">✗ FAIL</span><p class="cdemo-text">ข้อความนี้<br>อ่านยากมาก</p><p class="cratio">Ratio: 1.2:1</p></div>
+          <div class="cdemo cdemo-good"><span class="cbadge">✓ PASS</span><p class="cdemo-text">ข้อความนี้<br>อ่านได้ชัดเจน</p><p class="cratio">Ratio: 16.4:1</p></div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-hierarchy">
+        <h3>Visual Hierarchy</h3>
+        <p class="pdesc">จัดลำดับความสำคัญด้วยสายตา ทำให้ผู้ใช้รู้ว่าต้องดูอะไรก่อน ผ่านขนาด, น้ำหนัก, และสี</p>
+        <div class="hier-demo">
+          <p class="h1">Headline ใหญ่ที่สุด</p>
+          <p class="h2">Subtitle รองลงมา</p>
+          <p class="h3">Body text อ่านสบาย ขนาดพอดี ไม่เล็กเกิน ไม่ใหญ่เกิน เหมาะสำหรับเนื้อหาหลัก</p>
+          <p class="h4">caption — ข้อมูลเสริม เล็กที่สุด</p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-whitespace">
+        <h3>Whitespace</h3>
+        <p class="pdesc">พื้นที่ว่างไม่ใช่ "พื้นที่เสีย" แต่คือสิ่งที่ทำให้ UI โปร่ง อ่านง่าย และรู้สึกแพง</p>
+        <div class="ws-demo">
+          <div><div class="ws-box ws-bad"><div class="ws-line l"></div><div class="ws-line m"></div><div class="ws-line l"></div><div class="ws-line s"></div><div class="ws-line m"></div><div class="ws-line l"></div></div><p class="ws-lbl">✗ อึดอัด อ่านยาก</p></div>
+          <div><div class="ws-box ws-good"><div class="ws-line l"></div><div class="ws-line m"></div><div class="ws-line s"></div></div><p class="ws-lbl">✓ หายใจได้ ดูแพง</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Design Code Examples -->
+  <div class="demo-block reveal mt48">
+    <div class="demo-head">
+      <span class="demo-badge db-design">Code Example</span>
+      <span class="demo-head-title">Typography Scale & Color System</span>
+    </div>
+    <div class="split">
+      <div class="split-left">
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div>
+            <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Type Scale</p>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-family:'Playfair Display',serif;font-size:36px;">Aa</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);">--text-5xl · 48px</span></div>
+              <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-family:'Playfair Display',serif;font-size:24px;">Aa</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);">--text-3xl · 30px</span></div>
+              <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-size:16px;">Aa</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);">--text-base · 16px</span></div>
+              <div style="display:flex;align-items:baseline;gap:14px;"><span style="font-size:12px;">Aa</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);">--text-sm · 12px</span></div>
+            </div>
+          </div>
+          <div>
+            <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Color Tokens</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px;"><div style="width:40px;height:40px;background:var(--css);border-radius:2px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);">--css</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px;"><div style="width:40px;height:40px;background:var(--design);border-radius:2px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);">--design</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px;"><div style="width:40px;height:40px;background:var(--js);border-radius:2px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);">--js</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px;"><div style="width:40px;height:40px;background:var(--perf);border-radius:2px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);">--perf</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px;"><div style="width:40px;height:40px;background:var(--fg);border-radius:2px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);">--fg</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px;"><div style="width:40px;height:40px;background:var(--muted);border-radius:2px;"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);">--muted</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="split-right">
+        <div class="code-topbar">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-filename">design-tokens.css</span>
+          <button class="copy-btn" onclick="copyCode(this, 'design-code')">copy</button>
+        </div>
+        <pre id="design-code"><span class="cm">/* Design Tokens — ระบบสีและ Type Scale */</span>
+<span class="sel">:root</span> {
+  <span class="cm">/* Colors */</span>
+  <span class="prop">--color-primary</span>:   <span class="val">#E8C547</span>;
+  <span class="prop">--color-success</span>:   <span class="val">#7EB8A0</span>;
+  <span class="prop">--color-warning</span>:   <span class="val">#E07B5A</span>;
+  <span class="prop">--color-info</span>:      <span class="val">#8B9FE8</span>;
+  <span class="prop">--color-fg</span>:        <span class="val">#F0EDE8</span>;
+  <span class="prop">--color-muted</span>:     <span class="val">#6B6B6B</span>;
+  <span class="prop">--color-bg</span>:        <span class="val">#0D0D0D</span>;
+
+  <span class="cm">/* Type Scale (ratio 1.25) */</span>
+  <span class="prop">--text-xs</span>:   <span class="val">0.64rem</span>;   <span class="cm">/* 10px */</span>
+  <span class="prop">--text-sm</span>:   <span class="val">0.8rem</span>;    <span class="cm">/* 12.8px */</span>
+  <span class="prop">--text-base</span>: <span class="val">1rem</span>;      <span class="cm">/* 16px */</span>
+  <span class="prop">--text-lg</span>:   <span class="val">1.25rem</span>;   <span class="cm">/* 20px */</span>
+  <span class="prop">--text-xl</span>:   <span class="val">1.563rem</span>;  <span class="cm">/* 25px */</span>
+  <span class="prop">--text-2xl</span>:  <span class="val">1.953rem</span>;  <span class="cm">/* 31px */</span>
+  <span class="prop">--text-3xl</span>:  <span class="val">2.441rem</span>;  <span class="cm">/* 39px */</span>
+  <span class="prop">--text-5xl</span>:  <span class="val">3.815rem</span>;  <span class="cm">/* 61px */</span>
+
+  <span class="cm">/* Spacing (4pt grid) */</span>
+  <span class="prop">--space-1</span>: <span class="val">4px</span>;
+  <span class="prop">--space-2</span>: <span class="val">8px</span>;
+  <span class="prop">--space-4</span>: <span class="val">16px</span>;
+  <span class="prop">--space-8</span>: <span class="val">32px</span>;
+  <span class="prop">--space-16</span>: <span class="val">64px</span>;
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 03 JAVASCRIPT ══════════ -->
+<section id="js" style="background:var(--bg);">
+  <div class="sec-header reveal">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title j"><em>JavaScript</em> Essentials</h2>
+  </div>
+
+  <div class="topic-grid js-topics reveal">
+    <button class="tcard j" onclick="document.getElementById('js-vars').scrollIntoView({behavior:'smooth'})">
+      <span class="tcard-tag">Fundamentals</span>
+      <h3 class="tcard-title">var vs let vs const</h3>
+      <p class="tcard-desc">Scope, hoisting และทำไมควรหยุดใช้ var ในปี 2025</p>
+      <div class="tcard-foot"><span class="tcard-level">Beginner</span><span class="tcard-arrow">→</span></div>
+    </button>
+    <button class="tcard j" onclick="document.getElementById('js-dom').scrollIntoView({behavior:'smooth'})">
+      <span class="tcard-tag">DOM</span>
+      <h3 class="tcard-title">DOM Events & Interaction</h3>
+      <p class="tcard-desc">addEventListener, event delegation และ interactive demo ลองได้เลย</p>
+      <div class="tcard-foot"><span class="tcard-level">Beginner — Intermediate</span><span class="tcard-arrow">→</span></div>
+    </button>
+    <button class="tcard j" onclick="document.getElementById('js-async').scrollIntoView({behavior:'smooth'})">
+      <span class="tcard-tag">Async</span>
+      <h3 class="tcard-title">Fetch API & Async/Await</h3>
+      <p class="tcard-desc">ดึงข้อมูลจาก API จริงๆ พร้อม error handling แบบถูกต้อง</p>
+      <div class="tcard-foot"><span class="tcard-level">Intermediate</span><span class="tcard-arrow">→</span></div>
+    </button>
+    <button class="tcard j">
+      <span class="tcard-tag">ES6+</span>
+      <h3 class="tcard-title">Array Methods ที่ใช้บ่อย</h3>
+      <p class="tcard-desc">map, filter, reduce, find — เครื่องมือที่ทุกโปรเจกต์ใช้แน่นอน</p>
+      <div class="tcard-foot"><span class="tcard-level">Intermediate</span><span class="tcard-arrow">→</span></div>
+    </button>
+  </div>
+
+  <!-- VAR / LET / CONST -->
+  <div class="demo-block reveal" id="js-vars">
+    <div class="demo-head">
+      <span class="demo-badge db-js">Code Example</span>
+      <span class="demo-head-title">var vs let vs const — ความแตกต่างที่สำคัญ</span>
+    </div>
+    <div class="split">
+      <div class="split-left">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="padding:16px;background:rgba(224,123,90,0.07);border:1px solid rgba(224,123,90,0.2);border-left:3px solid var(--perf);">
+            <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--perf);letter-spacing:0.1em;margin-bottom:6px;">VAR — หลีกเลี่ยง</p>
+            <p style="font-size:12px;color:var(--muted);">Function-scoped, hoisted, reassignable — พฤติกรรมแปลกและ bug ได้ง่าย</p>
+          </div>
+          <div style="padding:16px;background:rgba(139,159,232,0.07);border:1px solid rgba(139,159,232,0.2);border-left:3px solid var(--js);">
+            <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--js);letter-spacing:0.1em;margin-bottom:6px;">LET — ใช้เมื่อต้องเปลี่ยนค่า</p>
+            <p style="font-size:12px;color:var(--muted);">Block-scoped, ไม่ถูก hoisted, reassignable — ใช้กับ counter, loop</p>
+          </div>
+          <div style="padding:16px;background:rgba(126,184,160,0.07);border:1px solid rgba(126,184,160,0.2);border-left:3px solid var(--design);">
+            <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--design);letter-spacing:0.1em;margin-bottom:6px;">CONST — default choice</p>
+            <p style="font-size:12px;color:var(--muted);">Block-scoped, ไม่ reassign — ใช้เป็น default เสมอ เว้นแต่รู้ว่าต้องเปลี่ยน</p>
+          </div>
+        </div>
+      </div>
+      <div class="split-right">
+        <div class="code-topbar">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-filename">variables.js</span>
+          <button class="copy-btn" onclick="copyCode(this, 'vars-code')">copy</button>
+        </div>
+        <pre id="vars-code"><span class="cm">// ❌ var — hoisting ทำให้งงได้ง่าย</span>
+<span class="kw">console</span>.<span class="fn">log</span>(name); <span class="cm">// undefined (ไม่ error!)</span>
+<span class="kw">var</span> <span class="prop">name</span> = <span class="str">"Alice"</span>;
+
+<span class="cm">// ✓ let — ใช้เมื่อต้องเปลี่ยนค่า</span>
+<span class="kw">let</span> <span class="prop">count</span> = <span class="num">0</span>;
+count++; <span class="cm">// OK</span>
+
+<span class="kw">for</span> (<span class="kw">let</span> <span class="prop">i</span> = <span class="num">0</span>; i &lt; <span class="num">3</span>; i++) {
+  setTimeout(() =&gt; <span class="kw">console</span>.<span class="fn">log</span>(i), <span class="num">100</span>);
+  <span class="cm">// ✓ พิมพ์ 0, 1, 2 ถูกต้อง</span>
+}
+
+<span class="cm">// ✓ const — ใช้เป็น default</span>
+<span class="kw">const</span> <span class="prop">user</span> = { <span class="prop">name</span>: <span class="str">"Bob"</span>, <span class="prop">age</span>: <span class="num">25</span> };
+user.<span class="prop">age</span> = <span class="num">26</span>; <span class="cm">// OK — object ยังแก้ได้</span>
+<span class="cm">// user = {} ❌ ไม่ได้ — reassign ไม่ได้</span>
+
+<span class="cm">// Destructuring</span>
+<span class="kw">const</span> { <span class="prop">name</span>: <span class="prop">userName</span>, <span class="prop">age</span> } = user;
+<span class="kw">const</span> [<span class="prop">first</span>, ...<span class="prop">rest</span>] = [<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>];</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOM EVENTS INTERACTIVE -->
+  <div class="demo-block reveal mt48" id="js-dom">
+    <div class="demo-head">
+      <span class="demo-badge db-js">Interactive Demo</span>
+      <span class="demo-head-title">DOM Events — ลองกดได้เลย</span>
+    </div>
+    <div class="split">
+      <div class="split-left">
+        <p style="font-size:12px;color:var(--muted);margin-bottom:20px;">กดปุ่มด้านล่างแล้วดู event log ทางขวา</p>
+        <div class="event-stage">
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <button class="ev-btn js-style" onclick="logEvent('click', 'ปุ่มถูกกด')">👆 Click Me</button>
+            <button class="ev-btn js-style" onmouseenter="logEvent('mouseenter', 'เมาส์เข้า')" onmouseleave="logEvent('mouseleave', 'เมาส์ออก')">🖱 Hover Me</button>
+            <button class="ev-btn js-style" ondblclick="logEvent('dblclick', 'ดับเบิลคลิก!')">⚡ Double Click</button>
+          </div>
+          <div class="ev-log" id="ev-log">
+            <span style="color:var(--muted);font-size:11px;">// กดปุ่มเพื่อดู events...</span>
+          </div>
+        </div>
+      </div>
+      <div class="split-right">
+        <div class="code-topbar">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-filename">dom-events.js</span>
+          <button class="copy-btn" onclick="copyCode(this, 'dom-code')">copy</button>
+        </div>
+        <pre id="dom-code"><span class="cm">// เพิ่ม event listener</span>
+<span class="kw">const</span> <span class="prop">btn</span> = <span class="fn">document</span>.<span class="fn">querySelector</span>(<span class="str">'#myBtn'</span>);
+
+btn.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, (<span class="prop">e</span>) =&gt; {
+  <span class="kw">console</span>.<span class="fn">log</span>(<span class="str">'clicked!'</span>, e.<span class="prop">target</span>);
+});
+
+<span class="cm">// Event Delegation — มีประสิทธิภาพกว่า</span>
+<span class="cm">// แทนที่จะ attach ทีละ element</span>
+<span class="kw">const</span> <span class="prop">list</span> = <span class="fn">document</span>.<span class="fn">querySelector</span>(<span class="str">'#list'</span>);
+
+list.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, (<span class="prop">e</span>) =&gt; {
+  <span class="kw">if</span> (e.<span class="prop">target</span>.<span class="fn">matches</span>(<span class="str">'.item'</span>)) {
+    e.<span class="prop">target</span>.<span class="prop">classList</span>.<span class="fn">toggle</span>(<span class="str">'active'</span>);
+  }
+});
+
+<span class="cm">// DOM Manipulation</span>
+<span class="kw">const</span> <span class="prop">el</span> = <span class="fn">document</span>.<span class="fn">createElement</span>(<span class="str">'div'</span>);
+el.<span class="prop">textContent</span> = <span class="str">'Hello!'</span>;
+el.<span class="prop">classList</span>.<span class="fn">add</span>(<span class="str">'card'</span>);
+<span class="fn">document</span>.<span class="prop">body</span>.<span class="fn">appendChild</span>(el);
+
+<span class="cm">// querySelector shortcuts</span>
+<span class="kw">const</span> <span class="prop">all</span> = [...<span class="fn">document</span>.<span class="fn">querySelectorAll</span>(<span class="str">'.btn'</span>)];
+all.<span class="fn">forEach</span>(<span class="prop">b</span> =&gt; b.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, handler));</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- FETCH / ASYNC -->
+  <div class="demo-block reveal mt48" id="js-async">
+    <div class="demo-head">
+      <span class="demo-badge db-js">Live API Demo</span>
+      <span class="demo-head-title">Fetch API — ดึงข้อมูลจริงได้เลย</span>
+    </div>
+    <div class="split">
+      <div class="split-left">
+        <p style="font-size:12px;color:var(--muted);margin-bottom:18px;">กด Fetch เพื่อดึงข้อมูล user จาก JSONPlaceholder API</p>
+        <div class="fetch-demo">
+          <div class="fetch-top">
+            <input class="fetch-url" id="fetch-url" value="https://jsonplaceholder.typicode.com/users/1" readonly>
+            <button class="fetch-btn" onclick="runFetch()">⟳ Fetch</button>
+          </div>
+          <div class="fetch-result" id="fetch-result">// กด Fetch เพื่อดึงข้อมูล...</div>
+        </div>
+      </div>
+      <div class="split-right">
+        <div class="code-topbar">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-filename">async-await.js</span>
+          <button class="copy-btn" onclick="copyCode(this, 'async-code')">copy</button>
+        </div>
+        <pre id="async-code"><span class="cm">// Fetch API + Async/Await</span>
+<span class="kw">async function</span> <span class="fn">getUser</span>(<span class="prop">id</span>) {
+  <span class="kw">try</span> {
+    <span class="kw">const</span> <span class="prop">res</span> = <span class="kw">await</span> <span class="fn">fetch</span>(
+      <span class="str">`https://api.example.com/users/<span class="prop">${id}</span>`</span>
+    );
+
+    <span class="cm">// ตรวจสอบ status ก่อนเสมอ</span>
+    <span class="kw">if</span> (!res.<span class="prop">ok</span>) {
+      <span class="kw">throw new</span> <span class="fn">Error</span>(<span class="str">`HTTP error: ${res.status}`</span>);
+    }
+
+    <span class="kw">const</span> <span class="prop">data</span> = <span class="kw">await</span> res.<span class="fn">json</span>();
+    <span class="kw">return</span> data;
+
+  } <span class="kw">catch</span> (<span class="prop">err</span>) {
+    <span class="kw">console</span>.<span class="fn">error</span>(<span class="str">'Fetch failed:'</span>, err);
+    <span class="kw">throw</span> err; <span class="cm">// re-throw เพื่อให้ caller จัดการ</span>
+  }
+}
+
+<span class="cm">// Parallel fetching</span>
+<span class="kw">const</span> [<span class="prop">users</span>, <span class="prop">posts</span>] = <span class="kw">await</span> <span class="fn">Promise</span>.<span class="fn">all</span>([
+  <span class="fn">fetch</span>(<span class="str">'/api/users'</span>).<span class="fn">then</span>(<span class="prop">r</span> =&gt; r.<span class="fn">json</span>()),
+  <span class="fn">fetch</span>(<span class="str">'/api/posts'</span>).<span class="fn">then</span>(<span class="prop">r</span> =&gt; r.<span class="fn">json</span>()),
+]);</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARRAY METHODS -->
+  <div class="demo-block reveal mt48">
+    <div class="demo-head">
+      <span class="demo-badge db-js">Code Example</span>
+      <span class="demo-head-title">Array Methods — ใช้บ่อยที่สุด</span>
+    </div>
+    <div class="code-wrap">
+      <div class="code-topbar">
+        <div class="code-dots"><span></span><span></span><span></span></div>
+        <span class="code-filename">array-methods.js</span>
+        <button class="copy-btn" onclick="copyCode(this, 'arr-code')">copy</button>
+      </div>
+      <pre id="arr-code" style="display:grid;grid-template-columns:1fr 1fr;gap:0;"><span style="border-right:1px solid var(--border);padding-right:24px;"><span class="kw">const</span> <span class="prop">products</span> = [
+  { <span class="prop">name</span>: <span class="str">'Phone'</span>,  <span class="prop">price</span>: <span class="num">15000</span>, <span class="prop">inStock</span>: <span class="kw">true</span>  },
+  { <span class="prop">name</span>: <span class="str">'Tablet'</span>, <span class="prop">price</span>: <span class="num">25000</span>, <span class="prop">inStock</span>: <span class="kw">false</span> },
+  { <span class="prop">name</span>: <span class="str">'Watch'</span>,  <span class="prop">price</span>: <span class="num">8000</span>,  <span class="prop">inStock</span>: <span class="kw">true</span>  },
+];
+
+<span class="cm">// map — แปลงทุก element</span>
+<span class="kw">const</span> <span class="prop">names</span> = products
+  .<span class="fn">map</span>(<span class="prop">p</span> =&gt; p.<span class="prop">name</span>);
+<span class="cm">// ['Phone', 'Tablet', 'Watch']</span>
+
+<span class="cm">// filter — กรอง</span>
+<span class="kw">const</span> <span class="prop">available</span> = products
+  .<span class="fn">filter</span>(<span class="prop">p</span> =&gt; p.<span class="prop">inStock</span>);
+<span class="cm">// [{Phone}, {Watch}]</span>
+
+<span class="cm">// find — หาตัวแรกที่ match</span>
+<span class="kw">const</span> <span class="prop">cheap</span> = products
+  .<span class="fn">find</span>(<span class="prop">p</span> =&gt; p.<span class="prop">price</span> &lt; <span class="num">10000</span>);
+<span class="cm">// {Watch}</span></span><span style="padding-left:24px;"><span class="cm">// reduce — สรุปเป็นค่าเดียว</span>
+<span class="kw">const</span> <span class="prop">total</span> = products
+  .<span class="fn">reduce</span>((<span class="prop">sum</span>, <span class="prop">p</span>) =&gt; sum + p.<span class="prop">price</span>, <span class="num">0</span>);
+<span class="cm">// 48000</span>
+
+<span class="cm">// some / every</span>
+<span class="kw">const</span> <span class="prop">hasStock</span> = products.<span class="fn">some</span>(<span class="prop">p</span> =&gt; p.<span class="prop">inStock</span>);
+<span class="cm">// true</span>
+<span class="kw">const</span> <span class="prop">allStock</span> = products.<span class="fn">every</span>(<span class="prop">p</span> =&gt; p.<span class="prop">inStock</span>);
+<span class="cm">// false</span>
+
+<span class="cm">// Chain methods</span>
+<span class="kw">const</span> <span class="prop">result</span> = products
+  .<span class="fn">filter</span>(<span class="prop">p</span> =&gt; p.<span class="prop">inStock</span>)
+  .<span class="fn">map</span>(<span class="prop">p</span> =&gt; ({
+    ...<span class="prop">p</span>,
+    <span class="prop">priceFormatted</span>: <span class="str">`฿${p.price.toLocaleString()}`</span>
+  }))
+  .<span class="fn">sort</span>((<span class="prop">a</span>, <span class="prop">b</span>) =&gt; a.<span class="prop">price</span> - b.<span class="prop">price</span>);</span></pre>
+    </div>
+  </div>
+
+  <!-- Mini Console -->
+  <div class="demo-block reveal mt48">
+    <div class="demo-head">
+      <span class="demo-badge db-js">Mini Console</span>
+      <span class="demo-head-title">ลองรัน JavaScript ได้เลย</span>
+    </div>
+    <div class="console-wrap">
+      <div class="console-bar">
+        <div class="console-dot cd-r"></div>
+        <div class="console-dot cd-y"></div>
+        <div class="console-dot cd-g"></div>
+        <span class="console-title">JavaScript Console</span>
+      </div>
+      <div class="console-body" id="console-out">
+        <div><span class="c-prompt">→</span><span class="c-info">// ลองพิมพ์ JS แล้วกด Run หรือ Enter</span></div>
+        <div><span class="c-prompt">→</span><span class="c-info">// ตัวอย่าง: [1,2,3].map(x => x * 2)</span></div>
+      </div>
+      <div class="console-input-row">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--js);margin-right:10px;">›</span>
+        <input class="console-input" id="console-input" placeholder="พิมพ์ JS ที่นี่..." onkeydown="if(event.key==='Enter') runConsole()">
+        <button class="console-run" onclick="runConsole()">Run ▶</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 04 PERFORMANCE ══════════ -->
+<section id="perf">
+  <div class="sec-header reveal">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title p">Web <em>Performance</em></h2>
+  </div>
+
+  <div class="perf-grid reveal">
+    <div class="perf-card">
+      <span class="pc-icon">⚡</span>
+      <h3 class="pc-title">Core Web Vitals</h3>
+      <p class="pc-desc">Google วัด 3 ค่าหลัก LCP, FID, CLS เพื่อคะแนน UX — ส่งผล SEO โดยตรง</p>
+      <span class="pc-tag">LCP · FID · CLS</span>
+    </div>
+    <div class="perf-card">
+      <span class="pc-icon">🖼</span>
+      <h3 class="pc-title">Image Optimization</h3>
+      <p class="pc-desc">รูปภาพ = 60-70% ของขนาดหน้า ใช้ WebP, lazy loading, และ srcset</p>
+      <span class="pc-tag">WebP · Lazy · srcset</span>
+    </div>
+    <div class="perf-card">
+      <span class="pc-icon">📦</span>
+      <h3 class="pc-title">Bundle Optimization</h3>
+      <p class="pc-desc">JS bundle ใหญ่ = โหลดช้า ใช้ Code Splitting, Tree Shaking, Minification</p>
+      <span class="pc-tag">Splitting · Minify · Gzip</span>
+    </div>
+  </div>
+
+  <!-- Performance Code -->
+  <div class="demo-block reveal mt48">
+    <div class="demo-head">
+      <span class="demo-badge db-perf">Code Example</span>
+      <span class="demo-head-title">Performance Best Practices</span>
+    </div>
+    <div class="code-wrap">
+      <div class="code-topbar">
+        <div class="code-dots"><span></span><span></span><span></span></div>
+        <span class="code-filename">performance.js + .html</span>
+        <button class="copy-btn" onclick="copyCode(this, 'perf-code')">copy</button>
+      </div>
+      <pre id="perf-code"><span class="cm">/* ── HTML: Image Optimization ──────────────────── */</span>
+<span class="tag">&lt;img</span>
+  <span class="attr">src</span>=<span class="aval">"hero.webp"</span>
+  <span class="attr">alt</span>=<span class="aval">"Hero image"</span>
+  <span class="attr">loading</span>=<span class="aval">"lazy"</span>          <span class="cm">/* lazy load นอก viewport */</span>
+  <span class="attr">decoding</span>=<span class="aval">"async"</span>        <span class="cm">/* decode แบบ non-blocking */</span>
+  <span class="attr">srcset</span>=<span class="aval">"hero-400.webp 400w,
+          hero-800.webp 800w,
+          hero-1200.webp 1200w"</span>
+  <span class="attr">sizes</span>=<span class="aval">"(max-width: 768px) 100vw, 50vw"</span>
+<span class="tag">/&gt;</span>
+
+<span class="cm">/* ── JS: Code Splitting (dynamic import) ─────── */</span>
+<span class="cm">// โหลด component เฉพาะตอนใช้งาน</span>
+<span class="kw">const</span> <span class="prop">btn</span> = <span class="fn">document</span>.<span class="fn">querySelector</span>(<span class="str">'#open-modal'</span>);
+
+btn.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, <span class="kw">async</span> () =&gt; {
+  <span class="kw">const</span> { <span class="prop">Modal</span> } = <span class="kw">await</span> <span class="kw">import</span>(<span class="str">'./modal.js'</span>);
+  <span class="kw">new</span> <span class="fn">Modal</span>().<span class="fn">open</span>();
+});
+
+<span class="cm">/* ── JS: Debounce — ป้องกัน over-firing ─────── */</span>
+<span class="kw">function</span> <span class="fn">debounce</span>(<span class="prop">fn</span>, <span class="prop">delay</span>) {
+  <span class="kw">let</span> <span class="prop">timer</span>;
+  <span class="kw">return</span> (...<span class="prop">args</span>) =&gt; {
+    <span class="fn">clearTimeout</span>(timer);
+    timer = <span class="fn">setTimeout</span>(() =&gt; <span class="fn">fn</span>(...args), delay);
+  };
+}
+
+<span class="kw">const</span> <span class="prop">onSearch</span> = <span class="fn">debounce</span>((<span class="prop">query</span>) =&gt; {
+  <span class="fn">fetchResults</span>(query);
+}, <span class="num">300</span>); <span class="cm">// รอ 300ms หลังพิมพ์หยุด</span>
+
+<span class="cm">/* ── JS: requestAnimationFrame ────────────────── */</span>
+<span class="cm">// animation ให้ใช้ rAF แทน setInterval</span>
+<span class="kw">function</span> <span class="fn">animate</span>(<span class="prop">timestamp</span>) {
+  <span class="cm">// update animation</span>
+  element.<span class="prop">style</span>.<span class="prop">transform</span> = <span class="str">`translateX(${x}px)`</span>;
+  <span class="fn">requestAnimationFrame</span>(animate);
+}
+<span class="fn">requestAnimationFrame</span>(animate);</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <h2 class="about-h">สร้างโดย<br><em>นักพัฒนา</em><br>เพื่อนักพัฒนา</h2>
+      <p class="about-p">เว็บนี้เกิดจากความเชื่อว่าการเรียน Frontend ที่ดีต้องเห็นภาพ ทดลองได้จริง และเข้าใจ "ทำไม" ไม่ใช่แค่ "ทำยังไง"</p>
+      <p class="about-p">ทุกหัวข้อมาจากประสบการณ์จริง ข้อผิดพลาดจริง และคำถามที่เคยสงสัยระหว่างเรียน Frontend</p>
+      <div class="about-tags">
+        <span class="atag">HTML5</span><span class="atag">CSS3</span><span class="atag">JavaScript</span>
+        <span class="atag">Figma</span><span class="atag">React</span><span class="atag">Git</span>
+        <span class="atag">Responsive</span><span class="atag">A11y</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="skill-card">
+        <div class="skill-card-hd"><div class="dot8"></div>Skills — 2025</div>
+        <div class="skills">
+          <div class="sk-row"><div class="sk-meta"><span class="sk-n">HTML & CSS</span><span class="sk-p">90%</span></div><div class="sk-track"><div class="sk-fill" style="--pct:90%;background:var(--css)"></div></div></div>
+          <div class="sk-row"><div class="sk-meta"><span class="sk-n">JavaScript</span><span class="sk-p">75%</span></div><div class="sk-track"><div class="sk-fill" style="--pct:75%;background:var(--js)"></div></div></div>
+          <div class="sk-row"><div class="sk-meta"><span class="sk-n">UI Design</span><span class="sk-p">85%</span></div><div class="sk-track"><div class="sk-fill" style="--pct:85%;background:var(--design)"></div></div></div>
+          <div class="sk-row"><div class="sk-meta"><span class="sk-n">React</span><span class="sk-p">65%</span></div><div class="sk-track"><div class="sk-fill" style="--pct:65%;background:var(--perf)"></div></div></div>
+          <div class="sk-row"><div class="sk-meta"><span class="sk-n">Web Performance</span><span class="sk-p">70%</span></div><div class="sk-track"><div class="sk-fill" style="--pct:70%;background:var(--muted)"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">Frontend<span>Decoded</span></div>
+  <span class="foot-copy">© — Website design by Pakornkiat Vonma And Claude AI</span>
+  <div class="foot-links">
+    <a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">ติดต่อ</a>
+  </div>
+  <script src = 'script.js'></script>
+</footer>
+</body>
+</html>
