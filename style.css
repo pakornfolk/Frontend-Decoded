@@ -216,22 +216,64 @@ select:focus { border-color:var(--css); }
 /* ── ABOUT ── */
 #about { background:var(--surface); }
 .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
-.about-h { font-family:'Playfair Display',serif; font-size:38px; font-weight:400; line-height:1.2; margin-bottom:22px; }
+.about-h { font-family:'Prompt',serif; font-size:38px; font-weight:400; line-height:1.2; margin-bottom:22px; }
 .about-h em { font-style:italic; color:var(--css); }
 .about-p { font-size:13px; color:var(--muted); line-height:1.9; margin-bottom:14px; }
 .about-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
 .atag { font-family:'Prompt',monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; border:1px solid var(--border); padding:5px 13px; color:var(--muted); border-radius:2px; transition:all 0.3s; }
 .atag:hover { border-color:var(--css); color:var(--css); }
-.skill-card { background:var(--surface2); border:1px solid var(--border); padding:36px; }
-.skill-card-hd { font-family:'Prompt',monospace; font-size:10px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:24px; display:flex; align-items:center; gap:8px; }
-.dot8 { width:7px; height:7px; border-radius:50%; background:var(--css); }
-.skills { display:flex; flex-direction:column; gap:14px; }
-.sk-row { display:flex; flex-direction:column; gap:6px; }
-.sk-meta { display:flex; justify-content:space-between; font-family:'IBM Plex Mono',monospace; font-size:11px; }
-.sk-n { color:var(--fg); } .sk-p { color:var(--muted); }
-.sk-track { height:2px; background:var(--border); border-radius:1px; overflow:hidden; }
-.sk-fill { height:100%; border-radius:1px; width:0; animation:fillBar 1.2s cubic-bezier(0.4,0,0.2,1) forwards 0.4s; }
 
+/* ── LEARNING CARDS  ── */
+.learn-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.learn-card{
+  background:var(--surface2);
+  border:1px solid var(--border);
+  padding:26px;
+  border-radius:4px;
+  transition:all .25s ease;
+  position:relative;
+  overflow:hidden;
+}
+.learn-card::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  width:3px;
+  height:0;
+  background:var(--css);
+  transition:height .35s ease;
+}
+.learn-card:hover::before{
+  height:100%;
+}
+.learn-card:hover{
+  background:#202020;
+  transform:translateY(-3px);
+}
+.learn-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:18px;
+  font-weight:400;
+  margin-bottom:8px;
+}
+.learn-card p{
+  font-size:12.5px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+/* responsive */
+
+@media (max-width:900px){
+  .learn-grid{
+    grid-template-columns:1fr;
+  }
+}
 /* ── FOOTER ── */
 footer { padding:44px 52px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
 .foot-logo { font-family:'Playfair Display',serif; font-size:18px; }
