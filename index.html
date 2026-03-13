@@ -6,6 +6,7 @@
 <title>Frontend Decoded — คู่มือ Frontend ฉบับครบจบ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -83,7 +84,7 @@
       <p class="tcard-desc">ปรับ properties แล้วดูผลทันที พร้อม code output แบบ live</p>
       <div class="tcard-foot"><span class="tcard-level">Beginner — Intermediate</span><span class="tcard-arrow">→</span></div>
     </button>
-    <button class="tcard c">
+    <button class="tcard c" onclick="document.getElementById('flex-demo').scrollIntoView({behavior:'smooth'})">
       <span class="tcard-tag">Layout</span>
       <h3 class="tcard-title">CSS Grid ทำ layout ซับซ้อน</h3>
       <p class="tcard-desc">เมื่อ Flexbox ไม่พอ Grid คือคำตอบ — grid-template-areas แบบเห็นภาพ</p>
@@ -426,7 +427,7 @@
       <p class="tcard-desc">ดึงข้อมูลจาก API จริงๆ พร้อม error handling แบบถูกต้อง</p>
       <div class="tcard-foot"><span class="tcard-level">Intermediate</span><span class="tcard-arrow">→</span></div>
     </button>
-    <button class="tcard j">
+    <button class="tcard j" onclick="document.getElementById('js-async').scrollIntoView({behavior:'smooth'})">
       <span class="tcard-tag">ES6+</span>
       <h3 class="tcard-title">Array Methods ที่ใช้บ่อย</h3>
       <p class="tcard-desc">map, filter, reduce, find — เครื่องมือที่ทุกโปรเจกต์ใช้แน่นอน</p>
@@ -831,8 +832,21 @@ btn.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, <
   <div class="foot-logo">Frontend<span>Decoded</span></div>
   <span class="foot-copy">© — Website design by Pakornkiat Vonma And Claude AI</span>
   <div class="foot-links">
-    <a href="https://github.com/pakornfolk/Frontend-Decoded">GitHub</a><a href="https://www.instagram.com/10_.pakxrnvm?igsh=cXc2cmxvYnc3MW1w&utm_source=qr">Instagram</a><a href = "https://line.me/ti/p/FHUSEzSGyT">Line</a><a href = "tel:0918367373">Tel</a>
-  </div>
+    <a href="https://github.com/pakornfolk/Frontend-Decoded" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+
+    <a href="https://www.instagram.com/10_.pakxrnvm?igsh=cXc2cmxvYnc3MW1w&utm_source=qr" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+
+    <a href="https://line.me/ti/p/FHUSEzSGyT" target="_blank">
+      <i class="fab fa-line"></i> Line
+    </a>
+
+    <a href="tel:0918367373">
+      <i class="fas fa-phone"></i> Tel
+    </a>
   <script src = 'script.js'></script>
 </footer>
 </body>
