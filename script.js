@@ -152,13 +152,32 @@ function escHTML(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-// ── ACTIVE NAV ──
+// ── ACTIVE NAV & SCROLL EFFECTS ──
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
+const progressBar = document.getElementById('progress-bar');
+const scrollTopBtn = document.getElementById('scroll-top');
+
 window.addEventListener('scroll', () => {
+  // 1. Active Nav
   let cur = '';
   sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
   navLinks.forEach(a => {
     a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
   });
+
+  // 2. Scroll Progress Bar
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  if (progressBar) progressBar.style.width = scrolled + "%";
+
+  // 3. Scroll To Top Button Visibility
+  if (scrollTopBtn) {
+    if (window.scrollY > 500) {
+      scrollTopBtn.classList.add('show');
+    } else {
+      scrollTopBtn.classList.remove('show');
+    }
+  }
 }, { passive: true });
