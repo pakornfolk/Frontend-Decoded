@@ -8,8 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="enhanced.css">
 </head>
 <body>
+
+
+
+<!-- SCROLL PROGRESS -->
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -27,8 +35,8 @@
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-bg-text">FE</div>
-  <div class="hero-label">// คู่มือ Frontend ฉบับครบจบ</div>
-  <h1 class="hero-title">เรียน Frontend<br><em>แบบเห็นภาพ</em><br>ทำได้จริง</h1>
+  <div class="hero-label">// คู่มือ Frontend ฉบับครบจบเบื้องต้น</div>
+  <h1 class="hero-title">เรียน Frontend <br><em>แบบเห็นภาพ</em><br>ทำได้จริง</h1>
   <p class="hero-desc">CSS · Design Principles · JavaScript · Web Performance รวมในที่เดียว พร้อม interactive demo และ code ตัวอย่างที่ copy ได้เลย</p>
   <div class="hero-pills">
     <a href="#css" class="pill css">01 — CSS</a>
@@ -847,7 +855,14 @@ btn.<span class="fn">addEventListener</span>(<span class="str">'click'</span>, <
     <a href="tel:0918367373">
       <i class="fas fa-phone"></i> Tel
     </a>
-  <script src = 'script.js'></script>
+  </div>
 </footer>
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Scroll to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
 </body>
 </html>
