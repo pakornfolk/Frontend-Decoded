@@ -1,0 +1,219 @@
+/* ── MODERN ENHANCEMENTS ── */
+
+/* 1. Global & Smooth Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
+
+/* 2. Scroll Progress Bar */
+#progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1001;
+  background: transparent;
+}
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--css), var(--design), var(--js), var(--perf));
+  box-shadow: 0 0 10px rgba(232, 197, 71, 0.5);
+  border-radius: 0 2px 2px 0;
+  transition: width 0.1s ease-out;
+}
+
+/* 3. Hero Enhancements */
+.hero-title {
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0px 10px 30px rgba(255,255,255,0.1);
+}
+.hero-title em {
+  background: linear-gradient(135deg, var(--css), #ff9a9e);
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 8px rgba(232, 197, 71, 0.4));
+}
+.hero-bg-text {
+  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0;
+  filter: blur(2px);
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+.pill {
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+}
+.pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.pill.css:hover { box-shadow: 0 8px 20px rgba(232,197,71,0.2); background: rgba(232,197,71,0.1); }
+.pill.design:hover { box-shadow: 0 8px 20px rgba(126,184,160,0.2); background: rgba(126,184,160,0.1); }
+.pill.js:hover { box-shadow: 0 8px 20px rgba(139,159,232,0.2); background: rgba(139,159,232,0.1); }
+.pill.perf:hover { box-shadow: 0 8px 20px rgba(224,123,90,0.2); background: rgba(224,123,90,0.1); }
+
+/* 4. Cards & Topics Enhancements (Glassmorphism & Rounding) */
+.topic-grid, .perf-grid, .js-topics, .learn-grid {
+  gap: 16px;
+  border: none !important;
+  background: transparent !important;
+}
+.tcard, .perf-card, .learn-card {
+  border-radius: 16px !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+  background: rgba(20,20,20,0.6) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+.tcard::before {
+  border-radius: 16px 0 0 16px;
+  width: 4px !important;
+}
+.learn-card::before {
+  border-radius: 16px 0 0 16px;
+  width: 4px !important;
+}
+.tcard:hover, .perf-card:hover, .learn-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  background: rgba(30,30,30,0.8) !important;
+  border-color: rgba(255,255,255,0.1) !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3) !important;
+  z-index: 10;
+}
+.tcard.c:hover { box-shadow: 0 15px 35px rgba(232,197,71,0.15) !important; }
+.tcard.d:hover { box-shadow: 0 15px 35px rgba(126,184,160,0.15) !important; }
+.tcard.j:hover { box-shadow: 0 15px 35px rgba(139,159,232,0.15) !important; }
+.tcard.p:hover { box-shadow: 0 15px 35px rgba(224,123,90,0.15) !important; }
+
+/* 5. Demo Blocks & Code Wrappers */
+.demo-block {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+@media (max-width: 900px) {
+  .demo-block { padding: 12px; }
+}
+.split {
+  border: none !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  gap: 2px !important;
+  background: rgba(255,255,255,0.05) !important;
+}
+.split-left, .split-right, .code-wrap, .console-wrap {
+  border-radius: 0 !important;
+}
+.code-wrap, .console-wrap {
+  border-radius: 12px !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+.code-topbar, .console-bar {
+  background: rgba(10,10,10,0.8) !important;
+  backdrop-filter: blur(5px);
+}
+
+/* 6. Buttons & Interactive Elements */
+button, .tab-btn {
+  transition: all 0.3s ease !important;
+}
+.ev-btn, .fetch-btn, .console-run {
+  border-radius: 8px !important;
+}
+.ev-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.1);
+}
+.ev-btn.js-style:hover {
+  box-shadow: 0 5px 15px rgba(139,159,232,0.2);
+}
+
+/* 7. Nav Links Active State */
+.nav-links a {
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--fg);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+.nav-links a:hover::after, .nav-links a.active::after {
+  width: 100%;
+}
+.nav-links a.active {
+  color: var(--fg);
+}
+
+/* 8. Scroll to Top Button */
+#scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,0.1);
+  color: var(--fg);
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+#scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#scroll-top:hover {
+  background: var(--css);
+  color: var(--bg);
+  border-color: var(--css);
+  box-shadow: 0 5px 20px rgba(232, 197, 71, 0.4);
+  transform: translateY(-5px);
+}
+
+
+
+/* Typography polish */
+.sec-title {
+  text-shadow: 0 4px 20px rgba(255,255,255,0.05);
+}
+
+/* Tab tweaks */
+.tab-btn.active {
+  background: rgba(126,184,160,0.1) !important; 
+  border-right-color: var(--design) !important; 
+  color: var(--design) !important;
+}
+.tabs-layout {
+  border-radius: 12px;
+  overflow: hidden;
+}
